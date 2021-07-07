@@ -40,7 +40,7 @@ io.on("connection", (socket) => {
       .to(user.room)
       .emit(
         "message",
-        generateMessage("Admin", `${user.username} has joined!`)
+        generateMessage("Server", `${user.username} has joined!`)
       );
     io.to(user.room).emit("roomData", {
       room: user.room,
@@ -80,7 +80,7 @@ io.on("connection", (socket) => {
     if (user) {
       io.to(user.room).emit(
         "message",
-        generateMessage("Admin", `${user.username} has left!`)
+        generateMessage("Server", `${user.username} has left!`)
       );
       io.to(user.room).emit("roomData", {
         room: user.room,
