@@ -35,7 +35,7 @@ io.on("connection", (socket) => {
 
     socket.join(user.room);
 
-    socket.emit("message", generateMessage("Admin", "Welcome!"));
+    socket.emit("message", generateMessage("Server", "Welcome!"));
     socket.broadcast
       .to(user.room)
       .emit(
